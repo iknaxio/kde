@@ -1,0 +1,12 @@
+[Desktop Action mountiso]
+Exec=mntDir=`kdialog --getexistingdirectory ~/`; suCmd="kdesudo"; command -v kdesudo >/dev/null 2>&1 || { suCmd="kdesu" >&2; }; `echo $suCmd` -c "mount -o loop -t iso9660 '%u' '$mntDir'"; dolphin $mntDir;
+Icon=media-optical
+Name=Mount iso
+Name[es]=Montar iso
+Name[en]=Mount iso
+
+[Desktop Entry]
+Actions=mountiso
+Icon=media-optical
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin,application/x-cd-image/.*
+Type=Service
